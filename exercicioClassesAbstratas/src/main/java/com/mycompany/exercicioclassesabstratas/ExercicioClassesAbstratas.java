@@ -34,6 +34,6 @@ public class ExercicioClassesAbstratas {
         
         personagem1.atacar(2);
         
-        personagem2.atacar(1, 30);
+         
     }
 }

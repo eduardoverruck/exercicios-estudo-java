@@ -51,16 +51,18 @@ public class PersonagemGuerreiro extends Personagem{
 
     @Override
     public void atacar(int vezes){
-        double dano = MultiplicadorDeDanoDeAtaque();
+        double dano = multiplicadorDeDanoDeAtaque();
         //calcular a logica de dano e atacar
     }
     
-    @Override
     public void atacar(int vezes, double distancia){
-        //fazer a logica de atacar
+        for (int i=1; i<=vezes; i++){
+            System.out.println("Atacar");
+        }
+        System.out.println("Dano X" + multiplicadorDeDanoDeAtaque());
     }
     
-    public double MultiplicadorDeDanoDeAtaque(){
+    public double multiplicadorDeDanoDeAtaque(){
         switch (estiloDeLuta){
             case defense:
                 return 0.8;
