@@ -19,7 +19,9 @@ public class ArmaMelee extends Arma{
 
     @Override
     public void atacar(int vezes) {
-        
+        for (int i=1; i<=vezes; i++){
+            System.out.println("attack...");
+        }
     }
     
     

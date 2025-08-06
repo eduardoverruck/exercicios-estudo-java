@@ -1,13 +1,15 @@
 package com.mycompany.exercicioclassesabstratas.entities;
 
+import com.mycompany.exercicioclassesabstratas.enums.EstiloDeLuta;
+
 public class PersonagemGuerreiro extends Personagem{
 
     private String tipo;
     private String legiao;
     private String moral;
-    private String estiloDeLuta;
+    private EstiloDeLuta estiloDeLuta;
 
-    public PersonagemGuerreiro(String tipo, String legiao, String moral, String estiloDeLuta, String name, String classe, int level, Arma arma) {
+    public PersonagemGuerreiro(String tipo, String legiao, String moral, EstiloDeLuta estiloDeLuta, String name, String classe, int level, Arma arma) {
         super(name, classe, level, arma);
         this.tipo = tipo;
         this.legiao = legiao;
@@ -39,28 +41,34 @@ public class PersonagemGuerreiro extends Personagem{
         this.moral = moral;
     }
 
-    public String getEstiloDeLuta() {
+    public EstiloDeLuta getEstiloDeLuta() {
         return estiloDeLuta;
     }
 
-    public void setEstiloDeLuta(String estiloDeLuta) {
+    public void setEstiloDeLuta(EstiloDeLuta estiloDeLuta) {
         this.estiloDeLuta = estiloDeLuta;
     }
 
     @Override
     public void atacar(int vezes){
         double dano = MultiplicadorDeDanoDeAtaque();
+        //calcular a logica de dano e atacar
+    }
+    
+    @Override
+    public void atacar(int vezes, double distancia){
+        //fazer a logica de atacar
     }
     
     public double MultiplicadorDeDanoDeAtaque(){
         switch (estiloDeLuta){
-            case "defense":
+            case defense:
                 return 0.8;
-            case "standart":
+            case standart:
                 return 1.0;
-            case "attack":
+            case attack:
                 return 1.2;
-            case "berserker":
+            case berserker:
                 return 2.3;
             default:
                 System.out.println("Estilo nao encontrado!");
